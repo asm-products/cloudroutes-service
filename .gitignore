@@ -3,3 +3,4 @@
 crweb.cfg
 env
 venv
+rethinkdb_data
