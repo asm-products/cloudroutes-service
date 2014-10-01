@@ -1,9 +1,0 @@
-#!/Users/michaelherman/Documents/repos/github/cloudroutes-service/env/bin/python
-# EASY-INSTALL-ENTRY-SCRIPT: 'rethinkdb==1.15.0-0','console_scripts','rethinkdb-import'
-__requires__ = 'rethinkdb==1.15.0-0'
-import sys
-from pkg_resources import load_entry_point
-
-sys.exit(
-   load_entry_point('rethinkdb==1.15.0-0', 'console_scripts', 'rethinkdb-import')()
-)
