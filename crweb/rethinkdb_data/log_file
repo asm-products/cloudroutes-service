@@ -1,0 +1,17 @@
+2014-09-30T16:57:28.781832000 0.365319s info: Creating directory /Users/michaelherman/Documents/repos/github/cloudroutes-service/crweb/rethinkdb_data
+2014-09-30T16:57:28.782018000 0.365504s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/michaelherman/Documents/repos/github/cloudroutes-service/crweb/rethinkdb_data' did not already exist.)
+2014-09-30T16:57:28.782071000 0.365557s info: Running rethinkdb 1.11.2 (CLANG 4.2 (clang-425.0.28))...
+2014-09-30T16:57:28.859796000 0.443282s info: Running on Darwin 12.5.0 x86_64
+2014-09-30T16:57:28.859848000 0.443334s info: Loading data from directory /Users/michaelherman/Documents/repos/github/cloudroutes-service/crweb/rethinkdb_data
+2014-09-30T16:57:31.317117000 2.900603s info: Listening for intracluster connections on port 29015
+2014-09-30T16:57:31.318570000 2.902056s info: Listening for client driver connections on port 28015
+2014-09-30T16:57:31.318593000 2.902079s info: Listening for administrative HTTP connections on port 8080
+2014-09-30T16:57:31.318600000 2.902085s info: Listening on addresses: 127.0.0.1, ::1
+2014-09-30T16:57:31.318601000 2.902087s info: To fully expose RethinkDB on the network, bind to all addresses
+2014-09-30T16:57:31.318603000 2.902088s info: by running rethinkdb with the `--bind all` command line option.
+2014-09-30T16:57:31.318604000 2.902089s info: Server ready
+2014-09-30T16:57:35.251850000 6.835336s info: Server got SIGINT from pid 424, uid 501; shutting down...
+2014-09-30T16:57:35.252173000 6.835659s info: Shutting down client connections...
+2014-09-30T16:57:35.252439000 6.835925s info: All client connections closed.
+2014-09-30T16:57:35.252449000 6.835935s info: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2014-09-30T16:57:35.252452000 6.835937s info: Storage engine shut down.
