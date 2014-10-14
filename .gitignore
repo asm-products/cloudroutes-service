@@ -1,0 +1,6 @@
+*.pyc
+*.DS_Store
+crweb.cfg
+env
+venv
+rethinkdb_data
