@@ -27,25 +27,11 @@ def check(data):
         return False
     retext = str(result.text)
     if data['data']['regex'] == "True":
-        match = re.search(data['data']['keyword'], retext)
-        if match:
-            if data['data']['present'] == "True":
-                return True
-            else:
-                return False
+        if re.search(data['data']['keyword'], retext):
+            return data['data']['present'] == "True"
         else:
-            if data['data']['present'] == "False":
-                return True
-            else:
-                return False
+            return data['data']['present'] == "False"
+    if data['data']['keyword'] in retext:
+        return data['data']['present'] == "True"
     else:
-        if data['data']['keyword'] in retext:
-            if data['data']['present'] == "True":
-                return True
-            else:
-                return False
-        else:
-            if data['data']['present'] == "False":
-                return True
-            else:
-                return False
+        return data['data']['present'] == "False"
