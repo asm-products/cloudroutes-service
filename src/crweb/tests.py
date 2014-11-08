@@ -12,23 +12,18 @@ class BaseTestCase(TestCase):
 
     def setUp(self):
         # Establish connection
-        r.connect(host="localhost", port=28015, auth_key="R3di5FTW").repl()
+        r.connect(
+            host=app.config['DBHOST'],
+            port=app.config['DBPORT'],
+            auth_key=app.config['DBAUTHKEY'],
+            db=app.config['DATABASE']
+        ).repl()
         # Create datbase and tables
-        r.db_create('test').run()
-        r.db('test').table_create('users').run()
         # Add user
         r.table("users").insert([
-            {'username': 'admin'},
-            {'email': 'ad@min.com'},
-            {'password': 'admin'},
-            {'company': 'Admin Company'},
-            {'contact': 'Admin Contact'}
+            {'username': 'admin', 'email': 'ad@min.com', 'password': 'admin',
+             'company': 'Admin Company', 'contact': 'Admin Contact'}
         ]).run()
-        # Close ection
-
-    def tearDown(self):
-        r.connect(host="localhost", port=28015, auth_key="R3di5FTW").repl()
-        r.db_drop('test').run()
 
 
 class FlaskTestCase(BaseTestCase):
