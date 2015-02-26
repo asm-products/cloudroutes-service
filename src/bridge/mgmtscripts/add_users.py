@@ -5,7 +5,7 @@ import time
 from werkzeug.security import generate_password_hash
 import rethinkdb as r
 
-from rethinkdb.errors import RqlRuntimeError, RqlDriverError
+from rethinkdb.errors import RqlDriverError
 
 if len(sys.argv) != 2:
     print("Hey, thats not how you launch this...")
@@ -22,14 +22,9 @@ cfh.close()
 database = config['rethink_db']
 
 try:
-    if config['rethink_authkey']:
-        conn = r.connect(
-            host=config['rethink_host'], port=config['rethink_port'],
-            auth_key=config['rethink_authkey'], db=config['rethink_db']).repl()
-    else:
-        conn = r.connect(
-            host=config['rethink_host'], port=config['rethink_port'],
-            db=config['rethink_db']).repl()
+    conn = r.connect(
+        host=config['rethink_host'], port=config['rethink_port'],
+        db=config['rethink_db']).repl()
     print "Connecting to RethinkDB"
 except RqlDriverError:
     print "Cannot connect to rethinkdb, shutting down"
@@ -46,10 +41,10 @@ userdata = {
     'creation_time': time.time(),
     'confirmed': True,
     'stripe': None,
-    'stripeid': None ,
-    'subplans': 2 ,
-    'subscribed_to_newsletter': False ,
-    'subscription':  'Free' ,
+    'stripeid': None,
+    'subplans': 2,
+    'subscribed_to_newsletter': False,
+    'subscription':  'Free',
 }
 
 # Add Dummy User
