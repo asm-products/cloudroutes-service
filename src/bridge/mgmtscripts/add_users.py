@@ -22,9 +22,14 @@ cfh.close()
 database = config['rethink_db']
 
 try:
-    conn = r.connect(
-        host=config['rethink_host'], port=config['rethink_port'],
-        db=config['rethink_db']).repl()
+    if config['rethink_authkey']:
+        conn = r.connect(
+            host=config['rethink_host'], port=config['rethink_port'],
+            auth_key=config['rethink_authkey'], db=config['rethink_db']).repl()
+    else:
+        conn = r.connect(
+            host=config['rethink_host'], port=config['rethink_port'],
+            db=config['rethink_db']).repl()
     print "Connecting to RethinkDB"
 except RqlDriverError:
     print "Cannot connect to rethinkdb, shutting down"

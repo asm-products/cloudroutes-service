@@ -8,13 +8,11 @@ import socket
 travis = False
 
 
-def createTable(dbname, tablename, conn):
+def create_table(dbname, tablename, conn):
     ''' Create a rethinkDB table '''
     print("Creating table: %s") % tablename
     try:
         r.db(dbname).table_create(tablename).run(conn)
-        r.db(dbname).table(tablename).get('auth').update(
-            {auth_key: config['rethink_authkey']})
     except (RqlDriverError, RqlRuntimeError, socket.error) as e:
         print("RethinkDB Error: %s") % e.message
         print("Table %s not created") % tablename
@@ -76,7 +74,7 @@ tables = [
     'dc2queue'
 ]
 for name in tables:
-    createTable(database, name, conn)
+    create_table(database, name, conn)
 print "Database created!"
 
 

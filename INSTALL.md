@@ -25,10 +25,11 @@ $ rethinkdb
 
 ### Initialize database
 
-Create the database, required tables, and set the authentication key, and then add a user:
+Create the database and required tables, set the authentication key, and then add a user:
 
 ```sh
 $ python src/bridge/mgmtscripts/create_db.py src/bridge/config/config.yml.default
+$ python src/bridge/mgmtscripts/set_auth.py src/bridge/config/config.yml.default
 $ python src/bridge/mgmtscripts/add_users.py src/bridge/config/config.yml.default
 ```
 
