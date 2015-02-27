@@ -5,7 +5,10 @@ import rethinkdb as r
 from rethinkdb.errors import RqlDriverError, RqlRuntimeError
 import socket
 
-def createTable(dbname, tablename, conn):
+travis = False
+
+
+def create_table(dbname, tablename, conn):
     ''' Create a rethinkDB table '''
     print("Creating table: %s") % tablename
     try:
@@ -25,7 +28,7 @@ cfh = open(configfile, "r")
 config = yaml.safe_load(cfh)
 cfh.close()
 
-if sys.argv[2]:
+if len(sys.argv) > 2:
     if sys.argv[2] == "--travis":
         travis = True
     else:
@@ -38,7 +41,7 @@ port = config['rethink_port']
 database = config['rethink_db']
 auth_key = config['rethink_authkey']
 try:
-    if auth_key and travis == False:
+    if auth_key and travis is False:
         conn = r.connect(host, port, auth_key=auth_key).repl()
     else:
         conn = r.connect(host, port).repl()
@@ -46,10 +49,11 @@ except (RqlDriverError, RqlRuntimeError, socket.error) as e:
     print("RethinkDB Error on Connection: %s") % e.message
     sys.exit(1)
 
-if travis == True:
+if travis is True:
     print("Setting RethinkDB auth key")
     try:
-        r.db('rethinkdb').table('cluster_config').get('auth').update({'auth_key' : auth_key}).run(conn)
+        r.db('rethinkdb').table(
+            'cluster_config').update({'auth_key': auth_key}).run(conn)
     except (RqlDriverError, RqlRuntimeError, socket.error) as e:
         print("RethinkDB Error setting auth key: %s") % e.message
 
@@ -70,7 +74,7 @@ tables = [
     'dc2queue'
 ]
 for name in tables:
-    createTable(database, name, conn)
+    create_table(database, name, conn)
 print "Database created!"
 
 

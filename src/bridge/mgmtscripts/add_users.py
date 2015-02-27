@@ -5,7 +5,7 @@ import time
 from werkzeug.security import generate_password_hash
 import rethinkdb as r
 
-from rethinkdb.errors import RqlRuntimeError, RqlDriverError
+from rethinkdb.errors import RqlDriverError
 
 if len(sys.argv) != 2:
     print("Hey, thats not how you launch this...")
@@ -46,10 +46,10 @@ userdata = {
     'creation_time': time.time(),
     'confirmed': True,
     'stripe': None,
-    'stripeid': None ,
-    'subplans': 2 ,
-    'subscribed_to_newsletter': False ,
-    'subscription':  'Free' ,
+    'stripeid': None,
+    'subplans': 2,
+    'subscribed_to_newsletter': False,
+    'subscription':  'Free',
 }
 
 # Add Dummy User

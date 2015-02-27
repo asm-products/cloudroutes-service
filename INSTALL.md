@@ -8,6 +8,8 @@
 
 ## RethinkDB Setup
 
+### Install
+
 We use [rethinkDB](http://www.rethinkdb.com/) for persistence. New to rethink? [Install](http://www.rethinkdb.com/docs/install/), then check out the [QuickStart](http://www.rethinkdb.com/docs/quickstart/).
 
 *Make sure to follow these rules regarding the server vs. driver versions:*
@@ -21,10 +23,14 @@ Once installed, start the server in a new terminal window:
 $ rethinkdb
 ```
 
-Then with the server running, run the following in a new window to set the authentication key (which comes from "/src/web/instance/web.cfg.default"):
+### Initialize database
+
+Create the database and required tables, set the authentication key, and then add a user:
 
 ```sh
-$ rethinkdb admin set auth cloudroutes
+$ python src/bridge/mgmtscripts/create_db.py src/bridge/config/config.yml.default
+$ python src/bridge/mgmtscripts/set_auth.py src/bridge/config/config.yml.default
+$ python src/bridge/mgmtscripts/add_users.py src/bridge/config/config.yml.default
 ```
 
 ## Redis Setup
@@ -46,15 +52,6 @@ Here is a list of configuration files, that can be used for the first time to ru
  - monitors/config/main.yml.default - used by monitors/broker.py and monitors/worker.py processes
  - bridge/config/config.yml.default - used by bridge/bridge.py processes
  - actions/config/config.yml.default - used by actions/broker.py and actions/actioner.py processes
-
-## Initialize database
-
-There is a `create_db.py` script for initializing RethinkDB. Create the database and required tables from the Python shell, and then add a user:
-
-```sh
-$ python src/bridge/mgmtscripts/create_db.py src/bridge/config/config.yml.default
-$ python src/bridge/mgmtscripts/add_users.py src/bridge/config/config.yml.default
-```
 
 ## Run all processes
 
