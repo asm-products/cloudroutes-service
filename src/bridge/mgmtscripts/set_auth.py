@@ -8,8 +8,8 @@ import socket
 
 def set_auth(conn):
     try:
-        r.db('rethinkdb').table('cluster_config').get(
-            'auth').update({'auth_key': config['rethink_authkey']}).run(conn)
+        r.db('rethinkdb').table('cluster_config').update(
+            {'auth_key': config['rethink_authkey']}).run(conn)
     except (RqlDriverError, RqlRuntimeError, socket.error) as e:
         print("RethinkDB Error: %s") % e.message
 

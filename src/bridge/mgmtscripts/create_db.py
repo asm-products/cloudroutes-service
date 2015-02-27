@@ -41,7 +41,7 @@ port = config['rethink_port']
 database = config['rethink_db']
 auth_key = config['rethink_authkey']
 try:
-    if auth_key and travis is not False:
+    if auth_key and travis is False:
         conn = r.connect(host, port, auth_key=auth_key).repl()
     else:
         conn = r.connect(host, port).repl()
@@ -52,8 +52,8 @@ except (RqlDriverError, RqlRuntimeError, socket.error) as e:
 if travis is True:
     print("Setting RethinkDB auth key")
     try:
-        r.db('rethinkdb').table('cluster_config').get(
-            'auth').update({'auth_key': auth_key}).run(conn)
+        r.db('rethinkdb').table(
+            'cluster_config').update({'auth_key': auth_key}).run(conn)
     except (RqlDriverError, RqlRuntimeError, socket.error) as e:
         print("RethinkDB Error setting auth key: %s") % e.message
 
