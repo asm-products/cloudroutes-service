@@ -28,9 +28,14 @@ import cookies
 from flask import Flask
 from flask import render_template
 
+# Flask extensions
+from flaskext.mail import Mail
+from flask.ext.mandrill import Mandrill
 
 # Application Configuration
 # ------------------------------------------------------------------
+
+mail = Mail()
 
 app = Flask(__name__)
 # Config files are located in the instance directory
@@ -39,6 +44,9 @@ if len(sys.argv) > 1:
     configfile = sys.argv[1]
 print("Using config %s" % configfile)
 app.config.from_pyfile(configfile)
+
+mandrill = Mandrill(app)
+mail.init_app(app)
 
 
 # Common Functions

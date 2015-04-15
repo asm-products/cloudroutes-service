@@ -12,8 +12,9 @@ from flask import g, abort, make_response, Blueprint, request, redirect, \
 
 
 from users import User
+from user.email import send_email
 from user.forms import SignupForm, LoginForm
-from token import generate_confirmation_token, confirm_token
+from user.token import generate_confirmation_token, confirm_token
 
 
 user_blueprint = Blueprint('user', __name__,)
@@ -79,7 +80,8 @@ def signup():
                 'email': email,
                 'password': password,
                 'company': company,
-                'contact': contact
+                'contact': contact,
+                'confirmed': False
             }
 
             # Create user
@@ -93,12 +95,20 @@ def signup():
                     app.config['STATHAT_EZ_KEY'],
                     app.config['ENVNAME'] + ' User Signup', 1)
                 print("/signup - New user created")
+
+                # Generate confirmation token
+                token = generate_confirmation_token(email, result, time.time())
+                # Create user confirmation email
+                confirm_url = url_for(
+                    'user.confirm_email', token=token, _external=True)
+                html = render_template(
+                    'user/confirm.html', confirm_url=confirm_url)
+                subject = "Please confirm your email"
+                send_email(user.email, subject, html)
+
                 cdata = cookies.genCdata(result, app.config['SECRET_KEY'])
                 data['loggedin'] = True
                 flash('You are signed up.', 'success')
-
-                # Generate confirmation token
-                generate_confirmation_token(email, result, time.time())
 
                 # Build response
                 resp = make_response(redirect(url_for('member.dashboard_page')))

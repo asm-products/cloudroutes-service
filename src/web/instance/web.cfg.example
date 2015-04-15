@@ -17,6 +17,9 @@ STATHAT_GEVENT_POOL_SIZE = 10
 STRIPE_PUBKEY = "update_me!"
 ASSEMBLY_PRIVATE_KEY = "update_me!"
 ASSEMBLY_PAYMENTS_URL = "update_me!"
+MAIL_DEFAULT_SENDER = "update_me!"
+MANDRILL_API_KEY = 'update_me!'
+MANDRILL_DEFAULT_FROM = 'update_me!'
 STATIC_PAGES = {
     'tos' : 'tos.html',
     'monitors' : 'monitors.html',
