@@ -32,3 +32,60 @@
 .dash-footer .credit .assembly-link {
   color: #666;
 }
+
+/*ASM Changes:dashboard 5/16/14*/
+
+/* CSS */
+.nav-stacked {
+  margin-bottom: 20px;background: #f9f9f9;border-radius:2px;}
+}
+.nav-stacked li:nth-child(odd) {background: #f9f9f9;}
+.nav-stacked li:nth-child(even) {background: #f6f6f6;}
+.nav-stacked li {margin:0px !important;border-bottom:1px solid #e7e7e7;}
+.nav-stacked > .active a {background: inherit !important;font-weight:bold;color: #326791 !important; }
+.nav-stacked li a {color: #b3b6bb !important;}
+.nav-stacked li a i {color: #326791 !important;min-width: 28px;margin:0px;}
+.nav-stacked li:hover {border-left: 3px solid #0674cd;}
+
+h4 {
+  background: #f3f3f3;
+  margin:0;
+  padding: 10px 13px;
+  border-bottom: 1px solid #e7e7e7;
+  border-radius:0px 0px 3px 3px;
+  
+} /*the Menu h4 */
+
+h5 {
+  background: #ffbc65;
+  margin:50px 0px 0px 0px;
+  padding: 10px 16px;
+  border-radius:3px 3px 0px 0px;
+  
+} /*special offers h5*/
+
+.nav-stacked:nth-child(4) li a { /*special offers*/
+  background: #f9f3ee;
+  color: #000 !important;
+  border: 1px  solid #ffbc65;
+  border-radius:0px 0px 3px 3px;
+}
+
+.page-header {
+    padding: 0px 0px 10px 0px !important;
+    margin: 0px 0px 20px 0px;
+    color: rgba(0,0,0,0.75);
+}
+
+.page-header i {
+  color: rgba(0,0,0,0.30);
+  padding-right:5px;
+}
+
+.lead {line-height:37px;font-size: 20px}
+.lead a {font-weight:bold;}
+
+/* Monitors and Reactions */
+.row .well > h4 {text-align:center !important; margin:15px 0px !important;border-radius:0px;}
+
+
