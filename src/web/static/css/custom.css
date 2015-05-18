@@ -63,12 +63,14 @@ h5.specialoffers {
   color:#000;
 } /*special offers h5*/
 
-.nav-stacked:nth-child(4) li a { /*special offers*/
+/*special offers link */
+.incent-offer { 
   background: #f9f3ee;
   color: #000 !important;
   border: 1px  solid #ffbc65;
   border-radius:0px 0px 3px 3px;
 }
+.incent-offer li:hover {border-left: unset !important;background:#fff !important;}
 
 .page-header {
     padding: 0px 0px 10px 0px !important;
