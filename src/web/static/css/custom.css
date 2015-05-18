@@ -45,7 +45,7 @@
 .nav-stacked li a i {color: #326791 !important;min-width: 28px;margin:0px;}
 .nav-stacked li:hover {border-left: 3px solid #0674cd;}
 
-h4 {
+h4.menu-header {
   background: #f3f3f3;
   margin:0;
   padding: 10px 13px;
