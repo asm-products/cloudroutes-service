@@ -32,3 +32,91 @@
 .dash-footer .credit .assembly-link {
   color: #666;
 }
+
+/* CSS */
+.nav-stacked {
+  margin-bottom: 20px;background: #f9f9f9;border-radius:2px;}
+}
+.nav-stacked li:nth-child(odd) {background: #ffffff;}
+.nav-stacked li:nth-child(even) {background: #ffffff;}
+.nav-stacked li {margin:0px !important;border:1px solid rgba(0,0,0,0.2);}
+.nav-stacked > .active a {background: inherit !important;font-weight:bold;color: #326791 !important; }
+.nav-stacked li a {color: #7d7f82 !important;}
+.nav-stacked li a i {color: #326791 !important;min-width: 28px;margin:0px;}
+.nav-stacked li:hover {border-left: 2px solid #0674cd; }
+.nav-stacked li:last-child {border-radius:0px 0px 3px 3px;}
+
+h4.menu-header {
+  background: #f3f3f3;
+  margin:0;
+  padding: 10px 13px;
+  border: 1px solid #1a6bb3;
+  border-radius: 3px 3px 0px 0px;
+	color: #000;
+  
+} /*the Menu h4 */
+
+h5.specialoffers {
+  background: #ffbc65;
+  margin:50px 0px 0px 0px;
+  padding: 10px 16px;
+  border-radius:3px 3px 0px 0px;
+  color:#000;
+} /*special offers h5*/
+
+/*special offers link */
+.incent-offer { 
+  background: #f9f3ee;
+  color: #000 !important;
+  border: 1px  solid #ffbc65;
+  border-radius:0px 0px 3px 3px;
+}
+.incent-offer li:hover {border-left: unset !important;background:#fff !important;}
+
+.page-header {
+    padding: 0px 0px 10px 0px !important;
+    margin: 0px 0px 20px 0px;
+    color: rgba(0,0,0,0.75);
+}
+
+.page-header i {
+  color: rgba(0,0,0,0.30);
+  padding-right:5px;
+}
+
+.lead {line-height:37px;font-size: 20px}
+.lead a {font-weight:bold;}
+
+/* Monitors and Reactions */
+.row .well > h4 {text-align:center !important; margin:15px 0px !important;border-radius:0px;}
+
+/*alert-success-primary colors*/
+.alert-success {background: #65cc57 !important;}
+.alert-warning {background: #fbb25c !important;}
+.alert-success, .alert-warning {width: 100%;margin:0 !important;border:2px solid rgba(0,0,0,0.09) !important;font-size:16px !important;padding:10px 15px !important;}
+.panel .btn-success, .panel .btn-danger, .panel .btn-primary {border:2px solid rgba(0,0,0,0.1) !important;}
+.panel .btn-success {background: #5bc14e !important;}
+.panel .btn-danger, .label-danger {background: #e56041 !important;}
+.panel .btn-primary {background: #555 !important;}
+.panel tr {vertical-align:middle !important;}
+.panel .panel-title {color: #fefefe;}
+/*tabs*/
+.tab-content {margin:0px 15px;}
+.panel-title, .panel tr {text-align:center;}
+tr.danger td {background: #ffe3e3 !important;vertical-align:middle !important;}
+.panel-heading {background:#0075d5 !important;}
+.panel {border: 1px solid #166eb6 !important;}
+.recent-events tr td {text-align:left;}
+
+/*header*/
+.navigation-menu {background: #3d3d3d !important;}
+.navigation-menu ul.nav li a {font-size:15px;text-transform:uppercase;}
+.navigation-menu ul li:hover a {text-decoration:unset; border-bottom:2px solid rgba(0,0,0,0.15);}
+.navigation-menu ul li:hover a.text-danger {background: rgba(0,0,0,0.15) !important;color:#e70e0e !important;border-radius:4px;}
+
+/*upgrade text section*/
+.upgrade_text h3 {text-align:center;text-transform:capitalize;margin-bottom:15px;}
+.upgrade_text p.lead {font-size: 18px;line-height:28px;}
+
+/*footer*/
+.glyphicon-heart {color:#ea4c27 !important;}
