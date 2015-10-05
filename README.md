@@ -1,6 +1,8 @@
 Runbook
 ===========
 
+[![Join the chat at https://gitter.im/Runbook/runbook](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Runbook/runbook?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 | Facility | Develop | Staging | Master |
 | --------- | -------- | -------- | ------------ |
 | Travis-CI | [![Build Status](https://travis-ci.org/Runbook/runbook.svg?branch=develop)](https://travis-ci.org/Runbook/runbook) | [![Build Status](https://travis-ci.org/Runbook/runbook.svg?branch=staging)](https://travis-ci.org/Runbook/runbook) | [![Build Status](https://travis-ci.org/Runbook/runbook.svg?branch=master)](https://travis-ci.org/Runbook/runbook)
