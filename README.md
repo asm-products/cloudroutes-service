@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Runbook/runbook.png?label=ready&title=Ready)](https://waffle.io/Runbook/runbook)
 Runbook
 ===========
 
